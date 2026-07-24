@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMC Online Enrollment Tracker 26-27</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F1EFE8; color: #2C2C2A; min-height: 100vh; }
+header { background: #fff; border-bottom: 1px solid #D3D1C7; padding: 1.25rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
+header h1 { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+header p { font-size: 12px; color: #888780; margin-top: 2px; }
+.badge { font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 20px; background: #E6F1FB; color: #185FA5; }
+main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+.section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #888780; margin-bottom: 0.75rem; }
+.metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 2rem; }
+.card { background: #fff; border-radius: 10px; border: 1px solid #D3D1C7; padding: 1.1rem 1.25rem; }
+.ep1 { font-size: 10px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: #2a78d6; margin-bottom: 6px; }
+.ep2 { font-size: 10px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: #eda100; margin-bottom: 6px; }
+.mname { font-size: 12px; color: #888780; margin-bottom: 4px; }
+.mval { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; line-height: 1; }
+.delta-pos { font-size: 12px; color: #0F6E56; font-weight: 500; margin-top: 5px; }
+.delta-flat { font-size: 12px; color: #888780; margin-top: 5px; }
+.vs-ly { font-size: 11px; color: #A32D2D; background: #FCEBEB; display: inline-block; padding: 2px 8px; border-radius: 20px; margin-top: 8px; }
+.chart-card { background: #fff; border-radius: 10px; border: 1px solid #D3D1C7; padding: 1.5rem; margin-bottom: 1.5rem; }
+.chart-head { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem; }
+.chart-title { font-size: 14px; font-weight: 600; }
+.chart-sub { font-size: 12px; color: #888780; margin-top: 2px; }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; }
+.li { display: flex; align-items: center; gap: 5px; font-size: 12px; color: #5F5E5A; }
+.ld { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+.chart-wrap { position: relative; width: 100%; height: 280px; }
+.note { background: #FAEEDA; border-left: 3px solid #eda100; padding: 0.75rem 1rem; font-size: 12px; color: #854F0B; margin-bottom: 2rem; line-height: 1.5; }
+.gap-box { background: #E6F1FB; border-radius: 10px; padding: 1.25rem 1.5rem; margin-top: 1.5rem; }
+.gap-box .gl { font-size: 12px; font-weight: 600; color: #185FA5; margin-bottom: 6px; }
+.gap-box .gb { font-size: 13px; color: #185FA5; line-height: 1.6; }
+.warn-box { background: #FCEBEB; border-radius: 10px; padding: 1.25rem 1.5rem; margin-top: 1rem; }
+.warn-box .wl { font-size: 12px; font-weight: 600; color: #A32D2D; margin-bottom: 6px; }
+.warn-box .wb { font-size: 13px; color: #A32D2D; line-height: 1.6; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #888780; padding: 0.6rem 1rem; border-bottom: 1px solid #D3D1C7; background: #F1EFE8; }
+td { padding: 0.7rem 1rem; border-bottom: 1px solid #F1EFE8; color: #444441; }
+tr.latest td { font-weight: 600; background: #E6F1FB; color: #185FA5; }
+.tup { color: #0F6E56; font-weight: 500; }
+.tflat { color: #888780; }
+footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem; border-top: 1px solid #D3D1C7; margin-top: 1rem; }
+@media (max-width: 680px) { header { padding: 1rem; } main { padding: 1rem; } }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>SMC Online Enrollment Tracker</h1>
+    <p>Academic year 26-27 &middot; Domestic applicants &middot; Last updated 7/20/2026</p>
+  </div>
+  <span class="badge">EP1 Aug &amp; EP2 Oct</span>
+</header>
+<main>
+
+<div class="note"><strong>Data note:</strong> Reports from 6/30 onward filtered to domestic applicants only. Confirm with Kimbraly that all snapshots use identical Slate filter parameters to ensure trend accuracy. Cancelled deposits increased to 5 this snapshot (+2) — worth monitoring.</div>
+
+<p class="section-label">Latest snapshot - 7/20/2026</p>
+<div class="metrics-grid">
+  <div class="card"><div class="ep1">EP1 Aug</div><div class="mname">Started apps</div><div class="mval">274</div><div class="delta-pos">+29 since 7/6</div><div class="vs-ly">-35 vs last year (-11.3%)</div></div>
+  <div class="card"><div class="ep1">EP1 Aug</div><div class="mname">Submitted apps</div><div class="mval">203</div><div class="delta-pos">+21 since 7/6</div><div class="vs-ly">-45 vs last year (-18.1%)</div></div>
+  <div class="card"><div class="ep1">EP1 Aug</div><div class="mname">Accepts</div><div class="mval">113</div><div class="delta-pos">+10 since 7/6</div><div class="vs-ly">-12 vs last year (-9.6%)</div></div>
+  <div class="card"><div class="ep1">EP1 Aug</div><div class="mname">Current deposits</div><div class="mval">59</div><div class="delta-pos">+7 since 7/6</div><div class="vs-ly">-19 vs last year (-24.4%)</div></div>
+  <div class="card"><div class="ep2">EP2 Oct</div><div class="mname">Started apps</div><div class="mval">41</div><div class="delta-pos">+11 since 7/6</div><div class="vs-ly">-19 vs last year (-31.7%)</div></div>
+  <div class="card"><div class="ep2">EP2 Oct</div><div class="mname">Submitted apps</div><div class="mval">23</div><div class="delta-pos">+5 since 7/6</div><div class="vs-ly">-12 vs last year (-34.3%)</div></div>
+</div>
+
+<div class="chart-card">
+  <div class="chart-head">
+    <div><div class="chart-title">EP1 Aug &amp; EP2 Oct - started and submitted</div><div class="chart-sub">Progress across all snapshots</div></div>
+    <div class="legend">
+      <div class="li"><span class="ld" style="background:#2a78d6;"></span>EP1 started</div>
+      <div class="li"><span class="ld" style="background:#1baf7a;"></span>EP1 submitted</div>
+      <div class="li"><span class="ld" style="background:#eda100;"></span>EP2 started</div>
+      <div class="li"><span class="ld" style="background:#eb6834;"></span>EP2 submitted</div>
+    </div>
+  </div>
+  <div class="chart-wrap">
+    <canvas id="pc" role="img" aria-label="Line chart of EP1 and EP2 started and submitted apps across six snapshots. EP1 started rose from 200 to 274. EP1 submitted rose from 128 to 203. EP2 started rose from 28 to 41. EP2 submitted rose from 15 to 23.">All four metrics trending upward across six snapshots from May 26 to July 20 2026.</canvas>
+  </div>
+</div>
+
+<p class="section-label" style="margin-top:2rem;">All snapshots</p>
+<div class="chart-card">
+  <table>
+    <thead><tr><th>Date</th><th>EP1 started</th><th>EP1 submitted</th><th>EP2 started</th><th>EP2 submitted</th><th>EP1 change since prior</th></tr></thead>
+    <tbody>
+      <tr><td>5/26</td><td>200</td><td>128</td><td>-</td><td>-</td><td class="tflat">baseline</td></tr>
+      <tr><td>6/18</td><td>225</td><td>170</td><td>28</td><td>15</td><td class="tup">+25 started / +42 submitted</td></tr>
+      <tr><td>6/22</td><td>230</td><td>173</td><td>29</td><td>16</td><td class="tup">+5 / +3</td></tr>
+      <tr><td>6/30</td><td>237</td><td>178</td><td>30</td><td>18</td><td class="tup">+7 / +5</td></tr>
+      <tr><td>7/6</td><td>245</td><td>182</td><td>30</td><td>18</td><td class="tup">+8 / +4</td></tr>
+      <tr class="latest"><td>7/20 - latest</td><td>274</td><td>203</td><td>41</td><td>23</td><td class="tup">+29 / +21</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="gap-box">
+  <p class="gl">Gap to close vs last year (EP1 Aug)</p>
+  <p class="gb">Need <strong>+35 started</strong> and <strong>+45 submitted</strong> to match YTD 25-26 pace. Current deposit gap widened to <strong>-19 (-24.4%)</strong> this snapshot - the gap-to-close on deposits is now larger than started apps, which is the key metric to watch heading into the August entry deadline.</p>
+</div>
+
+<div class="warn-box">
+  <p class="wl">Watch - cancelled deposits</p>
+  <p class="wb">Cancelled deposits for EP1 jumped from 2 to 5 this snapshot (66.7% increase vs last year). Small number but worth monitoring - if this trend continues it will erode net deposit gains.</p>
+</div>
+
+</main>
+<footer>SMC Digital Marketing &middot; Domestic Online Enrollment 26-27 &middot; Source: Slate CRM</footer>
+
+<script>
+new Chart(document.getElementById('pc'), {
+  type: 'line',
+  data: {
+    labels: ['5/26','6/18','6/22','6/30','7/6','7/20'],
+    datasets: [
+      { label: 'EP1 started', data: [200,225,230,237,245,274], borderColor: '#2a78d6', backgroundColor: '#2a78d6', pointRadius: 5, tension: 0.3, borderWidth: 2 },
+      { label: 'EP1 submitted', data: [128,170,173,178,182,203], borderColor: '#1baf7a', backgroundColor: '#1baf7a', pointRadius: 5, tension: 0.3, borderWidth: 2 },
+      { label: 'EP2 started', data: [null,28,29,30,30,41], borderColor: '#eda100', backgroundColor: '#eda100', pointRadius: 5, borderDash: [5,3], tension: 0.3, borderWidth: 2 },
+      { label: 'EP2 submitted', data: [null,15,16,18,18,23], borderColor: '#eb6834', backgroundColor: '#eb6834', pointRadius: 5, borderDash: [5,3], tension: 0.3, borderWidth: 2 }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { min: 0, max: 310, ticks: { color: '#888780', font: { size: 11 } }, grid: { color: 'rgba(136,135,128,0.15)' } },
+      x: { ticks: { color: '#888780', font: { size: 11 }, autoSkip: false }, grid: { display: false } }
+    }
+  }
+});
+</script>
+</body>
+</html>
