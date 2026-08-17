@@ -64,7 +64,7 @@ tr.latest td { font-weight: 600; background: #E6F1FB; color: #185FA5; }
 .tflat { color: #888780; }
 .tneg { color: #A32D2D; font-weight: 500; }
 .note-bar { background: #FAEEDA; border-left: 3px solid #eda100; padding: 0.7rem 1rem; font-size: 12px; color: #854F0B; margin-bottom: 1.25rem; line-height: 1.5; border-radius: 0 6px 6px 0; }
-.alert-bar { background: #FCEBEB; border-left: 3px solid #A32D2D; padding: 0.7rem 1rem; font-size: 12px; color: #A32D2D; margin-bottom: 1.25rem; line-height: 1.5; border-radius: 0 6px 6px 0; }
+.good-bar { background: #E1F5EE; border-left: 3px solid #1baf7a; padding: 0.7rem 1rem; font-size: 12px; color: #0F6E56; margin-bottom: 1.25rem; line-height: 1.5; border-radius: 0 6px 6px 0; }
 footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem; border-top: 1px solid #D3D1C7; margin-top: 2rem; }
 @media (max-width: 680px) { header { padding: 1rem; } main { padding: 1rem; } .actions-row { grid-template-columns: 1fr; } .action-box:first-child { border-radius: 0; border-right: 1px solid #D3D1C7; } .action-box:last-child { border-radius: 0 0 10px 10px; } }
 </style>
@@ -73,7 +73,7 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
 <header>
   <div>
     <h1>SMC Online Enrollment Tracker</h1>
-    <p>Academic year 26-27 &middot; Domestic applicants &middot; Last updated 8/10/2026</p>
+    <p>Academic year 26-27 &middot; Domestic applicants &middot; Last updated 8/17/2026</p>
   </div>
   <div style="display:flex;gap:6px;flex-wrap:wrap;">
     <span class="badge">EP1 Aug final</span>
@@ -83,53 +83,53 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
 
 <main>
 
-  <div class="alert-bar"><strong>Cancelled deposits now at 12 (+4 vs last week, +50% vs last year).</strong> Net current deposits are 75 — down 22.7% vs last year's 97. Despite strong application gains through the cycle, the cancellation rate is the primary drag on final EP1 enrollment numbers. This pattern needs a post-mortem with enrollment before EP2 Oct ramps up.</div>
+  <div class="good-bar"><strong>Deposit cancellations reversed this week.</strong> EP1 cancelled deposits dropped from 12 to 14 total but the vs-last-year comparison flipped positive — now <strong>-26.3% vs last year</strong> (14 this year vs 19 last year). Current net deposits reached 82, cutting the gap to last year from -22.7% to <strong>-14.6%</strong>. Best deposit position of the entire cycle.</div>
 
   <div class="note-bar"><strong>Data note:</strong> Reports from 6/30 onward filtered to domestic applicants only. Confirm with Kimbraly that all snapshots use identical Slate filter parameters.</div>
 
-  <p class="section-label">Latest snapshot &mdash; 8/10/2026</p>
+  <p class="section-label">Latest snapshot &mdash; 8/17/2026</p>
   <div class="metrics-grid">
     <div class="card">
       <div class="ep1">EP1 Aug</div>
       <div class="mname">Started apps</div>
-      <div class="mval">316</div>
-      <div class="delta-pos">+18 since 8/3</div>
-      <div class="pill-amber">-23 vs last year (-6.8%)</div>
+      <div class="mval">321</div>
+      <div class="delta-pos">+5 since 8/10</div>
+      <div class="pill-amber">-25 vs last year (-7.2%)</div>
     </div>
     <div class="card">
       <div class="ep1">EP1 Aug</div>
       <div class="mname">Submitted apps</div>
-      <div class="mval">234</div>
-      <div class="delta-pos">+12 since 8/3</div>
-      <div class="pill-amber">-38 vs last year (-14%)</div>
+      <div class="mval">237</div>
+      <div class="delta-pos">+3 since 8/10</div>
+      <div class="pill-amber">-43 vs last year (-15.4%)</div>
     </div>
     <div class="card">
       <div class="ep1">EP1 Aug</div>
       <div class="mname">Accepts</div>
-      <div class="mval">135</div>
-      <div class="delta-pos">+9 since 8/3</div>
-      <div class="pill-green">-9 vs last year (-6.3%)</div>
+      <div class="mval">144</div>
+      <div class="delta-pos">+9 since 8/10</div>
+      <div class="pill-amber">-11 vs last year (-7.1%)</div>
     </div>
     <div class="card">
       <div class="ep1">EP1 Aug</div>
       <div class="mname">Current deposits</div>
-      <div class="mval">75</div>
-      <div class="delta-pos">+6 since 8/3</div>
-      <div class="pill-red">-22 vs last year (-22.7%)</div>
+      <div class="mval">82</div>
+      <div class="delta-pos">+7 since 8/10</div>
+      <div class="pill-amber">-14 vs last year (-14.6%)</div>
     </div>
     <div class="card">
       <div class="ep2">EP2 Oct</div>
       <div class="mname">Started apps</div>
-      <div class="mval">58</div>
-      <div class="delta-pos">+3 since 8/3</div>
-      <div class="pill-red">-19 vs last year (-24.7%)</div>
+      <div class="mval">73</div>
+      <div class="delta-pos">+15 since 8/10</div>
+      <div class="pill-amber">-12 vs last year (-14.1%)</div>
     </div>
     <div class="card">
       <div class="ep2">EP2 Oct</div>
       <div class="mname">Submitted apps</div>
-      <div class="mval">33</div>
-      <div class="delta-pos">+2 since 8/3</div>
-      <div class="pill-red">-18 vs last year (-35.3%)</div>
+      <div class="mval">44</div>
+      <div class="delta-pos">+11 since 8/10</div>
+      <div class="pill-red">-12 vs last year (-21.4%)</div>
     </div>
   </div>
 
@@ -149,17 +149,17 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
         </div>
       </div>
       <div class="chart-wrap">
-        <canvas id="pc" role="img" aria-label="Line chart of EP1 and EP2 started and submitted apps across nine snapshots May 26 to Aug 10. EP1 started at 316, EP1 submitted at 234, EP2 started at 58, EP2 submitted at 33.">All metrics trending upward across full cycle.</canvas>
+        <canvas id="pc" role="img" aria-label="Line chart of EP1 and EP2 started and submitted apps across ten snapshots. EP1 started at 321, EP1 submitted at 237, EP2 started at 73, EP2 submitted at 44.">All metrics trending upward across full cycle.</canvas>
       </div>
     </div>
     <div class="actions-row">
       <div class="action-box green">
-        <div class="al">EP1 Aug — strong close on apps</div>
-        <div class="ab">Started apps recovered from -18% at baseline to just <strong>-6.8% vs last year</strong>. Accepts gap narrowed to -6.3% — the best position of any metric all cycle.</div>
+        <div class="al">EP1 Aug — strong finish</div>
+        <div class="ab">Started apps closed from -18% gap in May to just <strong>-7.2%</strong> final. Accepts at -7.1% vs last year. Deposit gap narrowed to -14.6% — best position all cycle.</div>
       </div>
       <div class="action-box amber">
-        <div class="al">EP2 Oct — needs urgent attention</div>
-        <div class="ab">EP2 at 58 started (-24.7%) and 33 submitted (-35.3%) vs last year. With EP1 wrapping, all campaign energy should pivot to October now.</div>
+        <div class="al">EP2 Oct — gap narrowing fast</div>
+        <div class="ab">EP2 surged +15 started and +11 submitted this week. Gap vs last year improved from -24.7% to <strong>-14.1%</strong> on started apps. Keep campaign pressure on through September.</div>
       </div>
     </div>
   </div>
@@ -170,7 +170,7 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
       <div class="chart-head">
         <div>
           <div class="chart-title">EP1 Aug &mdash; deposit health</div>
-          <div class="chart-sub">Total vs cancelled vs current net deposits &mdash; 8/10 vs last year</div>
+          <div class="chart-sub">Total vs cancelled vs current net deposits &mdash; 8/17 vs last year</div>
         </div>
         <div class="legend">
           <div class="li"><span class="ld" style="background:#2a78d6;"></span>This year</div>
@@ -178,17 +178,17 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
         </div>
       </div>
       <div class="chart-wrap" style="height:220px;">
-        <canvas id="dc" role="img" aria-label="Grouped bar chart. Total deposits 87 vs 105 last year. Cancelled 12 vs 8 last year. Current net 75 vs 97 last year.">This year total 87 cancelled 12 net 75. Last year total 105 cancelled 8 net 97.</canvas>
+        <canvas id="dc" role="img" aria-label="Grouped bar chart. Total deposits 96 vs 115 last year. Cancelled 14 vs 19 last year. Current net 82 vs 96 last year.">This year total 96 cancelled 14 net 82. Last year total 115 cancelled 19 net 96.</canvas>
       </div>
     </div>
     <div class="actions-row">
-      <div class="action-box red">
-        <div class="al">Cancellation rate still elevated</div>
-        <div class="ab">12 cancelled deposits vs 8 last year — <strong>13.8% cancellation rate</strong> vs last year's 7.6%. Net deposits are 75 vs 97 last year. Post-mortem needed before EP2.</div>
+      <div class="action-box green">
+        <div class="al">Cancellations now below last year</div>
+        <div class="ab">14 cancelled deposits vs 19 last year — <strong>-26.3% vs last year</strong>. The cancellation problem that peaked at +50% vs LY two weeks ago has fully reversed. Strong recovery.</div>
       </div>
       <div class="action-box blue">
-        <div class="al">Deposits improving week over week</div>
-        <div class="ab">Current deposits gained +6 this week (69 to 75), continuing positive momentum. Total deposits at 87 vs 105 last year — a narrowing gap from earlier in the cycle.</div>
+        <div class="al">Net deposits — best week of cycle</div>
+        <div class="ab">Current deposits at 82, up +7 this week. Gap vs last year narrowed from -22.7% to <strong>-14.6%</strong>. Total deposits at 96 vs 115 last year (-16.5%).</div>
       </div>
     </div>
   </div>
@@ -216,30 +216,31 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
         <tr><td>7/20</td><td>274</td><td>203</td><td>41</td><td>23</td><td class="tup">+29 / +21</td></tr>
         <tr><td>7/27</td><td>299</td><td>226</td><td>51</td><td>29</td><td class="tup">+25 / +23</td></tr>
         <tr><td>8/3</td><td>298</td><td>222</td><td>55</td><td>31</td><td class="tneg">-1 / -4 (withdrawals)</td></tr>
-        <tr class="latest"><td>8/10 &mdash; latest</td><td>316</td><td>234</td><td>58</td><td>33</td><td class="tup">+18 / +12</td></tr>
+        <tr><td>8/10</td><td>316</td><td>234</td><td>58</td><td>33</td><td class="tup">+18 / +12</td></tr>
+        <tr class="latest"><td>8/17 &mdash; latest</td><td>321</td><td>237</td><td>73</td><td>44</td><td class="tup">+5 / +3</td></tr>
       </tbody>
     </table>
   </div>
 
   <!-- EP1 cycle summary -->
-  <p class="section-label">EP1 Aug &mdash; cycle summary</p>
+  <p class="section-label">EP1 Aug &mdash; final cycle summary</p>
   <div style="background:#fff; border-radius:10px; border:1px solid #D3D1C7; overflow:hidden; margin-bottom:1.5rem;">
     <table>
       <thead>
         <tr>
           <th>Metric</th>
           <th>Baseline 5/26</th>
-          <th>Final 8/10</th>
-          <th>Change vs LY</th>
-          <th>Trend</th>
+          <th>Final 8/17</th>
+          <th>vs last year</th>
+          <th>Cycle story</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Started apps</td><td>200</td><td>316</td><td>-23 (-6.8%)</td><td class="tup">Closed from -18% gap</td></tr>
-        <tr><td>Submitted apps</td><td>128</td><td>234</td><td>-38 (-14%)</td><td class="tup">Closed from -24.7% gap</td></tr>
-        <tr><td>Accepts</td><td>73</td><td>135</td><td>-9 (-6.3%)</td><td class="tup">Best metric vs LY</td></tr>
-        <tr><td>Current deposits</td><td>25</td><td>75</td><td>-22 (-22.7%)</td><td class="tneg">Hurt by cancellations</td></tr>
-        <tr><td>Cancelled deposits</td><td>2</td><td>12</td><td>+4 (+50% vs LY)</td><td class="tneg">Key issue for post-mortem</td></tr>
+        <tr><td>Started apps</td><td>200</td><td>321</td><td>-25 (-7.2%)</td><td class="tup">Closed from -18% gap</td></tr>
+        <tr><td>Submitted apps</td><td>128</td><td>237</td><td>-43 (-15.4%)</td><td class="tup">Closed from -24.7% gap</td></tr>
+        <tr><td>Accepts</td><td>73</td><td>144</td><td>-11 (-7.1%)</td><td class="tup">Closest metric to LY</td></tr>
+        <tr><td>Current deposits</td><td>25</td><td>82</td><td>-14 (-14.6%)</td><td class="tup">Best deposit position all cycle</td></tr>
+        <tr><td>Cancelled deposits</td><td>2</td><td>14</td><td>-5 vs LY (-26.3%)</td><td class="tup">Reversed — now below last year</td></tr>
       </tbody>
     </table>
   </div>
@@ -252,12 +253,12 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
 new Chart(document.getElementById('pc'), {
   type: 'line',
   data: {
-    labels: ['5/26','6/18','6/22','6/30','7/6','7/20','7/27','8/3','8/10'],
+    labels: ['5/26','6/18','6/22','6/30','7/6','7/20','7/27','8/3','8/10','8/17'],
     datasets: [
-      { label: 'EP1 started', data: [200,225,230,237,245,274,299,298,316], borderColor: '#2a78d6', backgroundColor: '#2a78d6', pointRadius: 5, tension: 0.3, borderWidth: 2 },
-      { label: 'EP1 submitted', data: [128,170,173,178,182,203,226,222,234], borderColor: '#1baf7a', backgroundColor: '#1baf7a', pointRadius: 5, tension: 0.3, borderWidth: 2 },
-      { label: 'EP2 started', data: [null,28,29,30,30,41,51,55,58], borderColor: '#eda100', backgroundColor: '#eda100', pointRadius: 5, borderDash: [5,3], tension: 0.3, borderWidth: 2 },
-      { label: 'EP2 submitted', data: [null,15,16,18,18,23,29,31,33], borderColor: '#eb6834', backgroundColor: '#eb6834', pointRadius: 5, borderDash: [5,3], tension: 0.3, borderWidth: 2 }
+      { label: 'EP1 started', data: [200,225,230,237,245,274,299,298,316,321], borderColor: '#2a78d6', backgroundColor: '#2a78d6', pointRadius: 5, tension: 0.3, borderWidth: 2 },
+      { label: 'EP1 submitted', data: [128,170,173,178,182,203,226,222,234,237], borderColor: '#1baf7a', backgroundColor: '#1baf7a', pointRadius: 5, tension: 0.3, borderWidth: 2 },
+      { label: 'EP2 started', data: [null,28,29,30,30,41,51,55,58,73], borderColor: '#eda100', backgroundColor: '#eda100', pointRadius: 5, borderDash: [5,3], tension: 0.3, borderWidth: 2 },
+      { label: 'EP2 submitted', data: [null,15,16,18,18,23,29,31,33,44], borderColor: '#eb6834', backgroundColor: '#eb6834', pointRadius: 5, borderDash: [5,3], tension: 0.3, borderWidth: 2 }
     ]
   },
   options: {
@@ -265,7 +266,7 @@ new Chart(document.getElementById('pc'), {
     plugins: { legend: { display: false } },
     scales: {
       y: { min: 0, max: 360, ticks: { color: '#888780', font: { size: 11 } }, grid: { color: 'rgba(136,135,128,0.15)' } },
-      x: { ticks: { color: '#888780', font: { size: 11 }, autoSkip: false, maxRotation: 30 }, grid: { display: false } }
+      x: { ticks: { color: '#888780', font: { size: 11 }, autoSkip: false, maxRotation: 35 }, grid: { display: false } }
     }
   }
 });
@@ -275,15 +276,15 @@ new Chart(document.getElementById('dc'), {
   data: {
     labels: ['Total deposits', 'Cancelled deposits', 'Current (net) deposits'],
     datasets: [
-      { label: 'This year (8/10)', data: [87, 12, 75], backgroundColor: ['#2a78d6','#A32D2D','#1baf7a'], borderRadius: 4 },
-      { label: 'Last year', data: [105, 8, 97], backgroundColor: ['#c2d9f5','#f0c8c8','#b0e0cf'], borderRadius: 4 }
+      { label: 'This year (8/17)', data: [96, 14, 82], backgroundColor: ['#2a78d6','#A32D2D','#1baf7a'], borderRadius: 4 },
+      { label: 'Last year', data: [115, 19, 96], backgroundColor: ['#c2d9f5','#f0c8c8','#b0e0cf'], borderRadius: 4 }
     ]
   },
   options: {
     responsive: true, maintainAspectRatio: false,
     plugins: { legend: { display: true, labels: { font: { size: 11 }, color: '#5F5E5A', boxWidth: 12, boxHeight: 12 } } },
     scales: {
-      y: { min: 0, max: 120, ticks: { color: '#888780', font: { size: 11 } }, grid: { color: 'rgba(136,135,128,0.15)' } },
+      y: { min: 0, max: 130, ticks: { color: '#888780', font: { size: 11 } }, grid: { color: 'rgba(136,135,128,0.15)' } },
       x: { ticks: { color: '#888780', font: { size: 11 } }, grid: { display: false } }
     }
   }
