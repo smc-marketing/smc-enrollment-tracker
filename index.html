@@ -64,7 +64,6 @@ tr.latest td { font-weight: 600; background: #E6F1FB; color: #185FA5; }
 .tflat { color: #888780; }
 .tneg { color: #A32D2D; font-weight: 500; }
 .note-bar { background: #FAEEDA; border-left: 3px solid #eda100; padding: 0.7rem 1rem; font-size: 12px; color: #854F0B; margin-bottom: 1.25rem; line-height: 1.5; border-radius: 0 6px 6px 0; }
-.alert-bar { background: #FCEBEB; border-left: 3px solid #A32D2D; padding: 0.7rem 1rem; font-size: 12px; color: #A32D2D; margin-bottom: 1.25rem; line-height: 1.5; border-radius: 0 6px 6px 0; }
 .good-bar { background: #E1F5EE; border-left: 3px solid #1baf7a; padding: 0.7rem 1rem; font-size: 12px; color: #0F6E56; margin-bottom: 1.25rem; line-height: 1.5; border-radius: 0 6px 6px 0; }
 footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem; border-top: 1px solid #D3D1C7; margin-top: 2rem; }
 @media (max-width: 680px) { header { padding: 1rem; } main { padding: 1rem; } .actions-row { grid-template-columns: 1fr; } .action-box:first-child { border-radius: 0; border-right: 1px solid #D3D1C7; } .action-box:last-child { border-radius: 0 0 10px 10px; } }
@@ -74,7 +73,7 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
 <header>
   <div>
     <h1>SMC Online Enrollment Tracker</h1>
-    <p>Academic year 26-27 &middot; Domestic applicants &middot; Last updated 8/24/2026</p>
+    <p>Academic year 26-27 &middot; Domestic applicants &middot; Last updated 8/31/2026</p>
   </div>
   <div style="display:flex;gap:6px;flex-wrap:wrap;">
     <span class="badge">EP1 Aug closed</span>
@@ -84,55 +83,53 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
 
 <main>
 
-  <div class="alert-bar"><strong>EP1 current deposits dipped from 82 to 71 this week (-11).</strong> Cancelled deposits climbed to 25 (vs 28 last year, -10.7%) — still below last year overall but the weekly increase is worth monitoring. EP1 submitted apps held flat at 237. Focus is now fully on EP2 Oct.</div>
-
-  <div class="good-bar"><strong>EP2 Oct had a strong week.</strong> Started apps jumped from 73 to 90 (+17) and submitted from 44 to 55 (+11). Gap vs last year narrowed from -14.1% to <strong>-10.9%</strong> on started apps — the best EP2 position all cycle.</div>
+  <div class="good-bar"><strong>EP2 Oct gap nearly closed on started apps.</strong> EP2 started apps jumped from 90 to 101 this week (+11), narrowing the gap vs last year from -10.9% to just <strong>-7.3%</strong>. Submitted apps at -19.5% vs last year are the next lever to close. EP2 is tracking significantly better than EP1 was at this same stage of the cycle.</div>
 
   <div class="note-bar"><strong>Data note:</strong> Reports from 6/30 onward filtered to domestic applicants only. Confirm with Kimbraly that all snapshots use identical Slate filter parameters.</div>
 
-  <p class="section-label">Latest snapshot &mdash; 8/24/2026</p>
+  <p class="section-label">Latest snapshot &mdash; 8/31/2026</p>
   <div class="metrics-grid">
     <div class="card">
       <div class="ep1">EP1 Aug</div>
       <div class="mname">Started apps</div>
-      <div class="mval">320</div>
-      <div class="delta-neg">-1 since 8/17</div>
-      <div class="pill-amber">-26 vs last year (-7.5%)</div>
+      <div class="mval">319</div>
+      <div class="delta-neg">-1 since 8/24</div>
+      <div class="pill-amber">-27 vs last year (-7.8%)</div>
     </div>
     <div class="card">
       <div class="ep1">EP1 Aug</div>
       <div class="mname">Submitted apps</div>
       <div class="mval">237</div>
-      <div class="delta-flat">flat since 8/17</div>
+      <div class="delta-flat">flat since 8/24</div>
       <div class="pill-amber">-43 vs last year (-15.4%)</div>
-    </div>
-    <div class="card">
-      <div class="ep1">EP1 Aug</div>
-      <div class="mname">Accepts</div>
-      <div class="mval">144</div>
-      <div class="delta-flat">flat since 8/17</div>
-      <div class="pill-amber">-11 vs last year (-7.1%)</div>
     </div>
     <div class="card">
       <div class="ep1">EP1 Aug</div>
       <div class="mname">Current deposits</div>
       <div class="mval">71</div>
-      <div class="delta-neg">-11 since 8/17</div>
+      <div class="delta-flat">flat since 8/24</div>
       <div class="pill-red">-16 vs last year (-18.4%)</div>
     </div>
     <div class="card">
       <div class="ep2">EP2 Oct</div>
       <div class="mname">Started apps</div>
-      <div class="mval">90</div>
-      <div class="delta-pos">+17 since 8/17</div>
-      <div class="pill-amber">-11 vs last year (-10.9%)</div>
+      <div class="mval">101</div>
+      <div class="delta-pos">+11 since 8/24</div>
+      <div class="pill-green">-8 vs last year (-7.3%)</div>
     </div>
     <div class="card">
       <div class="ep2">EP2 Oct</div>
       <div class="mname">Submitted apps</div>
-      <div class="mval">55</div>
-      <div class="delta-pos">+11 since 8/17</div>
-      <div class="pill-red">-14 vs last year (-20.3%)</div>
+      <div class="mval">62</div>
+      <div class="delta-pos">+7 since 8/24</div>
+      <div class="pill-amber">-15 vs last year (-19.5%)</div>
+    </div>
+    <div class="card">
+      <div class="ep2">EP2 Oct</div>
+      <div class="mname">Current deposits</div>
+      <div class="mval">10</div>
+      <div class="delta-flat">flat since 8/24</div>
+      <div class="pill-amber">-1 vs last year (-9.1%)</div>
     </div>
   </div>
 
@@ -152,22 +149,22 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
         </div>
       </div>
       <div class="chart-wrap">
-        <canvas id="pc" role="img" aria-label="Line chart tracking EP1 and EP2 started and submitted apps across eleven snapshots May 26 to Aug 24. EP1 closing out around 320. EP2 surging to 90 started and 55 submitted.">EP1 started 200 to 320. EP1 submitted 128 to 237. EP2 started 28 to 90. EP2 submitted 15 to 55.</canvas>
+        <canvas id="pc" role="img" aria-label="Line chart tracking EP1 and EP2 started and submitted apps across twelve snapshots May 26 to Aug 31. EP1 closed around 319. EP2 started at 101, submitted at 62.">EP1 started 200 to 319. EP1 submitted 128 to 237. EP2 started 28 to 101. EP2 submitted 15 to 62.</canvas>
       </div>
     </div>
     <div class="actions-row">
       <div class="action-box blue">
-        <div class="al">EP1 Aug — final numbers settling</div>
-        <div class="ab">Started apps closed at <strong>-7.5% vs last year</strong>, submitted at -15.4%. Accepts held at -7.1%. Deposit gap widened slightly to -18.4% due to late cancellations — cycle is effectively closed.</div>
+        <div class="al">EP1 Aug — cycle closed</div>
+        <div class="ab">Final position: -7.8% started, -15.4% submitted, -18.4% current deposits vs last year. Closed from -18% / -24.7% at baseline in May. EP1 is done — focus is fully on EP2.</div>
       </div>
       <div class="action-box green">
-        <div class="al">EP2 Oct — best week of the cycle</div>
-        <div class="ab">+17 started and +11 submitted this week. Started apps gap narrowed to just <strong>-10.9% vs last year</strong> — closing fast. Keep campaign and nurture pressure on through September.</div>
+        <div class="al">EP2 Oct — gap nearly closed on starts</div>
+        <div class="ab">Started apps at 101, just <strong>-7.3% vs last year</strong>. Two more strong weeks could reach parity. Submitted apps at -19.5% is the gap to close next — 39 people have started but not submitted.</div>
       </div>
     </div>
   </div>
 
-  <!-- Chart 2: EP2 Oct progress focus -->
+  <!-- Chart 2: EP2 trajectory -->
   <div class="chart-block">
     <div class="chart-card">
       <div class="chart-head">
@@ -181,17 +178,17 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
         </div>
       </div>
       <div class="chart-wrap" style="height:220px;">
-        <canvas id="ep2c" role="img" aria-label="Line chart of EP2 Oct started and submitted apps from 6/18 to 8/24. Started: 28 to 90. Submitted: 15 to 55. Both accelerating.">EP2 started 28 to 90. EP2 submitted 15 to 55.</canvas>
+        <canvas id="ep2c" role="img" aria-label="Line chart of EP2 Oct started and submitted apps from 6/18 to 8/31. Started 28 to 101. Submitted 15 to 62. Both accelerating.">EP2 started 28 to 101. EP2 submitted 15 to 62.</canvas>
       </div>
     </div>
     <div class="actions-row">
-      <div class="action-box amber">
-        <div class="al">EP2 submitted gap still wide</div>
-        <div class="ab">Submitted apps at -20.3% vs last year (55 vs 69). Started-to-submitted conversion is the key lever now — nurture sequences for the 35 people who started but haven't submitted.</div>
-      </div>
       <div class="action-box green">
-        <div class="al">EP2 started gap nearly closed</div>
-        <div class="ab">At -10.9% vs last year on started apps, EP2 is tracking much closer to parity than EP1 was at this stage. Maintain campaign momentum through September deadline.</div>
+        <div class="al">Started apps — nearly at parity</div>
+        <div class="ab">101 started vs 109 last year at this point. Gap of just 8 apps. On current pace this could close entirely within 1-2 weeks.</div>
+      </div>
+      <div class="action-box amber">
+        <div class="al">Submitted apps — priority nurture target</div>
+        <div class="ab">62 submitted vs 77 last year (-19.5%). 39 people have started but not submitted. A targeted Slate outreach to this pool is the highest-leverage action right now.</div>
       </div>
     </div>
   </div>
@@ -211,7 +208,7 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
         </tr>
       </thead>
       <tbody>
-        <tr><td>5/26</td><td>200</td><td>128</td><td>&mdash;</td><td>&mdash;</td><td class="tflat">—</td></tr>
+        <tr><td>5/26</td><td>200</td><td>128</td><td>&mdash;</td><td>&mdash;</td><td class="tflat">&mdash;</td></tr>
         <tr><td>6/18</td><td>225</td><td>170</td><td>28</td><td>15</td><td class="tflat">EP2 baseline</td></tr>
         <tr><td>6/22</td><td>230</td><td>173</td><td>29</td><td>16</td><td class="tup">+1 / +1</td></tr>
         <tr><td>6/30</td><td>237</td><td>178</td><td>30</td><td>18</td><td class="tup">+1 / +2</td></tr>
@@ -221,7 +218,8 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
         <tr><td>8/3</td><td>298</td><td>222</td><td>55</td><td>31</td><td class="tup">+4 / +2</td></tr>
         <tr><td>8/10</td><td>316</td><td>234</td><td>58</td><td>33</td><td class="tup">+3 / +2</td></tr>
         <tr><td>8/17</td><td>321</td><td>237</td><td>73</td><td>44</td><td class="tup">+15 / +11</td></tr>
-        <tr class="latest"><td>8/24 &mdash; latest</td><td>320</td><td>237</td><td>90</td><td>55</td><td class="tup">+17 / +11</td></tr>
+        <tr><td>8/24</td><td>320</td><td>237</td><td>90</td><td>55</td><td class="tup">+17 / +11</td></tr>
+        <tr class="latest"><td>8/31 &mdash; latest</td><td>319</td><td>237</td><td>101</td><td>62</td><td class="tup">+11 / +7</td></tr>
       </tbody>
     </table>
   </div>
@@ -234,13 +232,13 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
         <tr>
           <th>Metric</th>
           <th>Baseline 5/26</th>
-          <th>Final 8/24</th>
+          <th>Final 8/31</th>
           <th>vs last year</th>
           <th>Cycle story</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Started apps</td><td>200</td><td>320</td><td>-26 (-7.5%)</td><td class="tup">Closed from -18% gap</td></tr>
+        <tr><td>Started apps</td><td>200</td><td>319</td><td>-27 (-7.8%)</td><td class="tup">Closed from -18% gap</td></tr>
         <tr><td>Submitted apps</td><td>128</td><td>237</td><td>-43 (-15.4%)</td><td class="tup">Closed from -24.7% gap</td></tr>
         <tr><td>Accepts</td><td>73</td><td>144</td><td>-11 (-7.1%)</td><td class="tup">Closest metric to LY all cycle</td></tr>
         <tr><td>Current deposits</td><td>25</td><td>71</td><td>-16 (-18.4%)</td><td class="tneg">Late cancellations widened gap</td></tr>
@@ -257,12 +255,12 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
 new Chart(document.getElementById('pc'), {
   type: 'line',
   data: {
-    labels: ['5/26','6/18','6/22','6/30','7/6','7/20','7/27','8/3','8/10','8/17','8/24'],
+    labels: ['5/26','6/18','6/22','6/30','7/6','7/20','7/27','8/3','8/10','8/17','8/24','8/31'],
     datasets: [
-      { label: 'EP1 started', data: [200,225,230,237,245,274,299,298,316,321,320], borderColor: '#2a78d6', backgroundColor: '#2a78d6', pointRadius: 4, tension: 0.3, borderWidth: 2 },
-      { label: 'EP1 submitted', data: [128,170,173,178,182,203,226,222,234,237,237], borderColor: '#1baf7a', backgroundColor: '#1baf7a', pointRadius: 4, tension: 0.3, borderWidth: 2 },
-      { label: 'EP2 started', data: [null,28,29,30,30,41,51,55,58,73,90], borderColor: '#eda100', backgroundColor: '#eda100', pointRadius: 4, borderDash: [5,3], tension: 0.3, borderWidth: 2 },
-      { label: 'EP2 submitted', data: [null,15,16,18,18,23,29,31,33,44,55], borderColor: '#eb6834', backgroundColor: '#eb6834', pointRadius: 4, borderDash: [5,3], tension: 0.3, borderWidth: 2 }
+      { label: 'EP1 started', data: [200,225,230,237,245,274,299,298,316,321,320,319], borderColor: '#2a78d6', backgroundColor: '#2a78d6', pointRadius: 4, tension: 0.3, borderWidth: 2 },
+      { label: 'EP1 submitted', data: [128,170,173,178,182,203,226,222,234,237,237,237], borderColor: '#1baf7a', backgroundColor: '#1baf7a', pointRadius: 4, tension: 0.3, borderWidth: 2 },
+      { label: 'EP2 started', data: [null,28,29,30,30,41,51,55,58,73,90,101], borderColor: '#eda100', backgroundColor: '#eda100', pointRadius: 4, borderDash: [5,3], tension: 0.3, borderWidth: 2 },
+      { label: 'EP2 submitted', data: [null,15,16,18,18,23,29,31,33,44,55,62], borderColor: '#eb6834', backgroundColor: '#eb6834', pointRadius: 4, borderDash: [5,3], tension: 0.3, borderWidth: 2 }
     ]
   },
   options: {
@@ -278,17 +276,17 @@ new Chart(document.getElementById('pc'), {
 new Chart(document.getElementById('ep2c'), {
   type: 'line',
   data: {
-    labels: ['6/18','6/22','6/30','7/6','7/20','7/27','8/3','8/10','8/17','8/24'],
+    labels: ['6/18','6/22','6/30','7/6','7/20','7/27','8/3','8/10','8/17','8/24','8/31'],
     datasets: [
-      { label: 'EP2 started', data: [28,29,30,30,41,51,55,58,73,90], borderColor: '#eda100', backgroundColor: 'rgba(237,161,0,0.1)', pointRadius: 5, tension: 0.3, borderWidth: 2, fill: true },
-      { label: 'EP2 submitted', data: [15,16,18,18,23,29,31,33,44,55], borderColor: '#eb6834', backgroundColor: 'rgba(235,104,52,0.1)', pointRadius: 5, tension: 0.3, borderWidth: 2, fill: true }
+      { label: 'EP2 started', data: [28,29,30,30,41,51,55,58,73,90,101], borderColor: '#eda100', backgroundColor: 'rgba(237,161,0,0.1)', pointRadius: 5, tension: 0.3, borderWidth: 2, fill: true },
+      { label: 'EP2 submitted', data: [15,16,18,18,23,29,31,33,44,55,62], borderColor: '#eb6834', backgroundColor: 'rgba(235,104,52,0.1)', pointRadius: 5, tension: 0.3, borderWidth: 2, fill: true }
     ]
   },
   options: {
     responsive: true, maintainAspectRatio: false,
     plugins: { legend: { display: false } },
     scales: {
-      y: { min: 0, max: 120, ticks: { color: '#888780', font: { size: 11 } }, grid: { color: 'rgba(136,135,128,0.15)' } },
+      y: { min: 0, max: 130, ticks: { color: '#888780', font: { size: 11 } }, grid: { color: 'rgba(136,135,128,0.15)' } },
       x: { ticks: { color: '#888780', font: { size: 11 }, autoSkip: false, maxRotation: 35 }, grid: { display: false } }
     }
   }
