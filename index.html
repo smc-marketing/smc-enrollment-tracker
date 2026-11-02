@@ -12,8 +12,8 @@ header { background: #fff; border-bottom: 1px solid #D3D1C7; padding: 1.25rem 2r
 header h1 { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
 header p { font-size: 12px; color: #888780; margin-top: 2px; }
 .badge { font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 20px; background: #E6F1FB; color: #185FA5; white-space: nowrap; }
-.badge-green { font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 20px; background: #E1F5EE; color: #0F6E56; white-space: nowrap; margin-left: 6px; }
-.badge-amber { font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 20px; background: #FAEEDA; color: #854F0B; white-space: nowrap; margin-left: 6px; }
+.badge-green { font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 20px; background: #E1F5EE; color: #0F6E56; white-space: nowrap; }
+.badge-amber { font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 20px; background: #FAEEDA; color: #854F0B; white-space: nowrap; }
 main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
 .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #888780; margin-bottom: 0.75rem; }
 .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(165px, 1fr)); gap: 12px; margin-bottom: 2rem; }
@@ -37,14 +37,16 @@ main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
 .legend { display: flex; flex-wrap: wrap; gap: 14px; }
 .li { display: flex; align-items: center; gap: 5px; font-size: 12px; color: #5F5E5A; }
 .ld { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+.ld-dash { width: 14px; height: 0; border-top: 2px dashed; border-radius: 0; }
 .chart-wrap { position: relative; width: 100%; height: 260px; }
 .chart-block { margin-bottom: 1.5rem; }
 .chart-block .chart-card { border-radius: 10px 10px 0 0; border-bottom: none; }
 .actions-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; margin-bottom: 1.5rem; }
 .action-box { padding: 1rem 1.25rem; border: 1px solid #D3D1C7; border-top: none; }
-.action-box:first-child { border-radius: 0 0 0 10px; border-right: none; }
+.action-box:not(:last-child) { border-right: none; }
+.action-box:first-child { border-radius: 0 0 0 10px; }
 .action-box:last-child { border-radius: 0 0 10px 0; }
-.action-box:only-child { border-radius: 0 0 10px 10px; border-right: 1px solid #D3D1C7; }
+.action-box:only-child { border-radius: 0 0 10px 10px; }
 .action-box.blue { background: #E6F1FB; } .action-box.amber { background: #FAEEDA; }
 .action-box.green { background: #E1F5EE; } .action-box.purple { background: #EDE9F6; }
 .action-box .al { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px; }
@@ -53,38 +55,42 @@ main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
 .action-box .ab { font-size: 12px; line-height: 1.55; }
 .action-box.blue .ab { color: #1a4f8a; } .action-box.amber .ab { color: #6b3f08; }
 .action-box.green .ab { color: #0a4d3a; } .action-box.purple .ab { color: #3a2070; }
+.table-card { background: #fff; border-radius: 10px; border: 1px solid #D3D1C7; overflow: hidden; margin-bottom: 1.5rem; }
+.table-scroll { overflow-x: auto; }
+.table-foot { padding: 0.75rem 1rem; font-size: 11px; color: #888780; border-top: 1px solid #F1EFE8; line-height: 1.5; }
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
-th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #888780; padding: 0.6rem 1rem; border-bottom: 1px solid #D3D1C7; background: #F1EFE8; }
-td { padding: 0.7rem 1rem; border-bottom: 1px solid #F1EFE8; color: #444441; }
+th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #888780; padding: 0.6rem 1rem; border-bottom: 1px solid #D3D1C7; background: #F1EFE8; white-space: nowrap; }
+td { padding: 0.7rem 1rem; border-bottom: 1px solid #F1EFE8; color: #444441; white-space: nowrap; }
 tr.latest td { font-weight: 600; background: #EDE9F6; color: #4A2D8F; }
+tr.total td { font-weight: 600; background: #F1EFE8; }
 .tup { color: #0F6E56; font-weight: 500; } .tflat { color: #888780; } .tneg { color: #A32D2D; font-weight: 500; }
 .good-bar { background: #E1F5EE; border-left: 3px solid #1baf7a; padding: 0.7rem 1rem; font-size: 12px; color: #0F6E56; margin-bottom: 1.25rem; line-height: 1.5; border-radius: 0 6px 6px 0; }
 .note-bar { background: #FAEEDA; border-left: 3px solid #eda100; padding: 0.7rem 1rem; font-size: 12px; color: #854F0B; margin-bottom: 1.25rem; line-height: 1.5; border-radius: 0 6px 6px 0; }
 footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem; border-top: 1px solid #D3D1C7; margin-top: 2rem; }
-@media (max-width: 680px) { header { padding: 1rem; } main { padding: 1rem; } .actions-row { grid-template-columns: 1fr; } .action-box:first-child { border-radius: 0; border-right: 1px solid #D3D1C7; } .action-box:last-child { border-radius: 0 0 10px 10px; } }
+@media (max-width: 680px) { header { padding: 1rem; } main { padding: 1rem; } .actions-row { grid-template-columns: 1fr; } .action-box, .action-box:not(:last-child) { border-radius: 0; border-right: 1px solid #D3D1C7; } .action-box:last-child { border-radius: 0 0 10px 10px; } }
 </style>
 </head>
 <body>
 <header>
   <div>
     <h1>SMC Online Enrollment Tracker</h1>
-    <p>Academic year 26-27 &middot; Domestic applicants &middot; Last updated 10/26/2026</p>
+    <p>Academic year 26-27 &middot; Domestic applicants &middot; Last updated 11/02/2026</p>
   </div>
   <div style="display:flex;gap:6px;flex-wrap:wrap;">
     <span class="badge">EP1 &amp; EP2 closed</span>
-    <span class="badge-amber">EP3 Jan -39.5%</span>
-    <span class="badge-green">EP5 May +150%</span>
+    <span class="badge-amber">EP3 Jan -39.3%</span>
+    <span class="badge-green">Inquiries +15.7%</span>
   </div>
 </header>
 
 <main>
 
-  <div class="note-bar"><strong>EP3 January — steady gains for four consecutive weeks.</strong> Started apps at 46 vs 76 last year (-39.5%), +2 since last week. Submitted at 30 vs 56 last year (-46.4%), +2 since last week. EP3 deposits now ahead of last year (10 vs 9, +11.1%) — the first EP3 metric to turn positive. Keep campaign pressure on through November.</div>
+  <div class="note-bar"><strong>EP3 January — last year's November surge has started, and we need to match it.</strong> Started apps at 51 vs 84 last year (-39.3%), +5 this week. Submitted at 32 vs 63 last year (-49.2%), +2 this week. EP3 deposits are now 10 vs 12 last year (-16.7%): ours held flat while last year added 3 in the same week. Last year EP3 added another 94 starts and 67 submissions between now and close, so most of the cycle is still ahead.</div>
 
-  <div class="good-bar"><strong>Inquiries up 16.1% YTD</strong> (4,249 vs 3,660 last year) and <strong>EP3 deposits turned positive</strong> (10 vs 9 last year, +11.1%). Four consecutive weeks of EP3 gains. Total YTD inquiries remain the highest in the four-year window.</div>
+  <div class="good-bar"><strong>Inquiries up 15.7% YTD</strong> (4,255 vs 3,679 last year), still the highest in the four-year window. <strong>EP5 May</strong> is ahead on started apps (5 vs 3) and submitted (3 vs 2).</div>
 
   <!-- Current snapshot -->
-  <p class="section-label">Latest snapshot &mdash; 10/26/2026</p>
+  <p class="section-label">Latest snapshot &mdash; 11/02/2026</p>
   <div class="metrics-grid">
     <div class="card">
       <div class="ep1">EP1 Aug — closed</div>
@@ -103,30 +109,30 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
     <div class="card">
       <div class="ep3">EP3 Jan — active</div>
       <div class="mname">Started apps</div>
-      <div class="mval">46</div>
-      <div class="delta-pos">+2 since 10/19</div>
-      <div class="pill-amber">-30 vs last year (-39.5%)</div>
+      <div class="mval">51</div>
+      <div class="delta-pos">+5 since 10/26</div>
+      <div class="pill-red">-33 vs last year (-39.3%)</div>
     </div>
     <div class="card">
       <div class="ep3">EP3 Jan — active</div>
       <div class="mname">Submitted apps</div>
-      <div class="mval">30</div>
-      <div class="delta-pos">+2 since 10/19</div>
-      <div class="pill-red">-26 vs last year (-46.4%)</div>
+      <div class="mval">32</div>
+      <div class="delta-pos">+2 since 10/26</div>
+      <div class="pill-red">-31 vs last year (-49.2%)</div>
     </div>
     <div class="card">
       <div class="ep3">EP3 Jan — active</div>
       <div class="mname">Current deposits</div>
       <div class="mval">10</div>
-      <div class="delta-pos">+2 since 10/19</div>
-      <div class="pill-green">+1 vs last year (+11.1%)</div>
+      <div class="delta-flat">flat since 10/26</div>
+      <div class="pill-amber">-2 vs last year (-16.7%)</div>
     </div>
     <div class="card">
       <div class="ep5">EP5 May — early</div>
       <div class="mname">Started apps</div>
       <div class="mval">5</div>
-      <div class="delta-flat">flat since 10/19</div>
-      <div class="pill-green">+3 vs last year (+150%)</div>
+      <div class="delta-flat">flat since 10/26</div>
+      <div class="pill-green">+2 vs last year (+66.7%)</div>
     </div>
   </div>
 
@@ -135,27 +141,28 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
     <div class="chart-card">
       <div class="chart-head">
         <div>
-          <div class="chart-title">EP3 January — started and submitted weekly progress</div>
-          <div class="chart-sub">Week-over-week snapshots with last year reference lines</div>
+          <div class="chart-title">EP3 January — this year vs last year's pace</div>
+          <div class="chart-sub">Weekly YTD snapshots, compared with last year's YTD on the same date</div>
         </div>
         <div class="legend">
-          <div class="li"><span class="ld" style="background:#4A2D8F;"></span>EP3 started '26-27</div>
-          <div class="li"><span class="ld" style="background:#9F7AEA;"></span>EP3 submitted '26-27</div>
-          <div class="li"><span class="ld" style="background:#D3D1C7;border:1px dashed #888780;"></span>Last year final</div>
+          <div class="li"><span class="ld" style="background:#4A2D8F;"></span>Started '26-27</div>
+          <div class="li"><span class="ld" style="background:#9F7AEA;"></span>Submitted '26-27</div>
+          <div class="li"><span class="ld-dash" style="border-color:#4A2D8F;"></span>Started LY</div>
+          <div class="li"><span class="ld-dash" style="border-color:#9F7AEA;"></span>Submitted LY</div>
         </div>
       </div>
       <div class="chart-wrap">
-        <canvas id="ep3Chart" role="img" aria-label="EP3 started: 27, 36, 44. EP3 submitted: 18, 25, 28. Reference lines at LY 69 started and 49 submitted.">EP3 started 27→36→44. EP3 submitted 18→25→28. Both trending up but below LY.</canvas>
+        <canvas id="ep3Chart" role="img" aria-label="EP3 started this year: 27, 36, 44, 46, 51. Last year same dates: 47, 54, 69, 76, 84. EP3 submitted this year: 18, 25, 28, 30, 32. Last year: 34, 39, 49, 56, 63.">EP3 started and submitted are rising each week, but last year's pace is rising faster.</canvas>
       </div>
     </div>
     <div class="actions-row">
-      <div class="action-box purple">
-        <div class="al">+8 started, +3 submitted this week</div>
-        <div class="ab">Best single-week EP3 gain of the tracked cycle. Three consecutive weeks of positive movement. Gap vs last year narrowing — from -42.6% to -36.2% on started apps over two weeks.</div>
-      </div>
       <div class="action-box amber">
-        <div class="al">Still -36.2% vs last year — keep pushing</div>
-        <div class="ab">25 apps behind last year's YTD pace on starts. Last year EP3 went from 69 YTD to 178 final — there's runway to close this gap but campaign pressure needs to stay on through November.</div>
+        <div class="al">Growing, but not keeping pace</div>
+        <div class="ab">This week: +5 started, +2 submitted, 0 deposits. Last year in the same week: +8, +7 and +3. The started-apps gap has held near -39% for two weeks after widening from -33% on 10/12.</div>
+      </div>
+      <div class="action-box purple">
+        <div class="al">Submission is the bottleneck</div>
+        <div class="ab">63% of EP3 starts have submitted vs 75% last year, leaving 19 started-but-not-submitted EP3 applications. Remarketing and admissions outreach to that group is the most direct lever before Thanksgiving.</div>
       </div>
     </div>
   </div>
@@ -166,7 +173,7 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
       <div class="chart-head">
         <div>
           <div class="chart-title">All entry points — started apps YTD comparison</div>
-          <div class="chart-sub">Four-year YTD comparison at this point in the cycle</div>
+          <div class="chart-sub">Four-year YTD comparison at this point in the cycle (11/02)</div>
         </div>
         <div class="legend">
           <div class="li"><span class="ld" style="background:#888780;"></span>'23-24</div>
@@ -176,24 +183,25 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
         </div>
       </div>
       <div class="chart-wrap" style="height:220px;">
-        <canvas id="ytdChart" role="img" aria-label="Bar chart of started apps YTD by entry point across four years. EP3 Jan: 70, 96, 69, 44. EP1 and EP2 both closed.">All entry points shown. EP3 at 44 is below prior years.</canvas>
+        <canvas id="ytdChart" role="img" aria-label="Started apps YTD by entry point across four years. EP1: 188, 301, 346, 316. EP2: 70, 124, 135, 132. EP3: 84, 121, 84, 51. EP4: 9, 12, 12, 4. EP5: 4, 5, 3, 5.">EP3 at 51 is the lowest of the four years at this date.</canvas>
       </div>
     </div>
     <div class="actions-row">
       <div class="action-box blue">
-        <div class="al">Total YTD -10.9% (501 vs 562 LY)</div>
-        <div class="ab">With EP1 and EP2 both closed, the total YTD gap is primarily driven by EP3 and EP4. EP5 May at +150% is a bright spot — early sign that the later entry points may have stronger pipelines than they appear right now.</div>
+        <div class="al">Total YTD -12.4% (508 vs 580 LY)</div>
+        <div class="ab">With EP1 and EP2 closed, the remaining gap is driven by EP3 (-33 started) and EP4 (-8). EP3 at 51 is the lowest of the four years at this date; last year was 84 and two years ago 121.</div>
       </div>
       <div class="action-box green">
-        <div class="al">Inquiries +16.3% YTD — pipeline is healthy</div>
-        <div class="ab">4,242 inquiries vs 3,647 last year — highest of any year in the four-year window. The conversion gap (inquiries not becoming applications) remains the structural challenge to address in the EP3 nurture sequence.</div>
+        <div class="al">Inquiries +15.7% — pipeline is healthy</div>
+        <div class="ab">4,255 inquiries vs 3,679 last year. This week added 13 vs 32 for last year, so the lead narrowed slightly. The gap remains inquiry-to-application conversion, not lead volume.</div>
       </div>
     </div>
   </div>
 
   <!-- All entry points table -->
-  <p class="section-label" style="margin-top:2rem;">All entry points — YTD summary 10/19/2026</p>
-  <div style="background:#fff; border-radius:10px; border:1px solid #D3D1C7; overflow:hidden; margin-bottom:1.5rem;">
+  <p class="section-label" style="margin-top:2rem;">All entry points — YTD summary 11/02/2026</p>
+  <div class="table-card">
+    <div class="table-scroll">
     <table>
       <thead>
         <tr><th>Entry point</th><th>Started YTD</th><th>vs LY</th><th>Submitted YTD</th><th>vs LY</th><th>Current deposits</th><th>vs LY</th></tr>
@@ -201,28 +209,33 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
       <tbody>
         <tr><td>EP1 Aug — closed</td><td>316</td><td class="tneg">-30 (-8.7%)</td><td>235</td><td class="tneg">-45 (-16.1%)</td><td>71</td><td class="tneg">-16 (-18.4%)</td></tr>
         <tr><td>EP2 Oct — closed</td><td>132</td><td class="tneg">-3 (-2.2%)</td><td>77</td><td class="tneg">-15 (-16.3%)</td><td>16</td><td class="tneg">-5 (-23.8%)</td></tr>
-        <tr><td>EP3 Jan — active</td><td>46</td><td class="tneg">-30 (-39.5%)</td><td>30</td><td class="tneg">-26 (-46.4%)</td><td>10</td><td class="tup">+1 (+11.1%)</td></tr>
-        <tr><td>EP4 March — early</td><td>4</td><td class="tneg">-6 (-60%)</td><td>3</td><td class="tneg">-4 (-57.1%)</td><td>1</td><td class="tflat">—</td></tr>
-        <tr><td>EP5 May — early</td><td>5</td><td class="tup">+3 (+150%)</td><td>3</td><td class="tup">+2 (+200%)</td><td>0</td><td class="tflat">—</td></tr>
-        <tr class="latest"><td><strong>Total YTD</strong></td><td><strong>503</strong></td><td class="tneg"><strong>-66 (-11.6%)</strong></td><td><strong>348</strong></td><td class="tneg"><strong>-88 (-20.2%)</strong></td><td><strong>98</strong></td><td class="tneg"><strong>-19 (-16.2%)</strong></td></tr>
+        <tr><td>EP3 Jan — active</td><td>51</td><td class="tneg">-33 (-39.3%)</td><td>32</td><td class="tneg">-31 (-49.2%)</td><td>10</td><td class="tneg">-2 (-16.7%)</td></tr>
+        <tr><td>EP4 March — early</td><td>4</td><td class="tneg">-8 (-66.7%)</td><td>3</td><td class="tneg">-4 (-57.1%)</td><td>0</td><td class="tneg">-2</td></tr>
+        <tr><td>EP5 May — early</td><td>5</td><td class="tup">+2 (+66.7%)</td><td>3</td><td class="tup">+1 (+50%)</td><td>0</td><td class="tflat">&mdash;</td></tr>
+        <tr class="total"><td>Total YTD</td><td>508</td><td class="tneg">-72 (-12.4%)</td><td>350</td><td class="tneg">-94 (-21.2%)</td><td>99</td><td class="tneg">-21 (-17.5%)</td></tr>
       </tbody>
     </table>
+    </div>
   </div>
 
   <!-- EP3 snapshot history -->
   <p class="section-label">EP3 January — snapshot history</p>
-  <div style="background:#fff; border-radius:10px; border:1px solid #D3D1C7; overflow:hidden; margin-bottom:1.5rem;">
+  <div class="table-card">
+    <div class="table-scroll">
     <table>
       <thead>
-        <tr><th>Date</th><th>EP3 started</th><th>EP3 submitted</th><th>Deposits</th><th>vs LY started</th><th>Change since prior</th></tr>
+        <tr><th>Date</th><th>Started</th><th>LY started</th><th>Gap</th><th>Submitted</th><th>LY submitted</th><th>Deposits</th><th>Change since prior</th></tr>
       </thead>
       <tbody>
-        <tr><td>10/5</td><td>36</td><td>25</td><td>8</td><td class="tneg">-33 (-47.8%)</td><td class="tflat">baseline</td></tr>
-        <tr><td>10/12</td><td>36</td><td>25</td><td>8</td><td class="tneg">-33 (-47.8%)</td><td class="tflat">flat / flat</td></tr>
-        <tr><td>10/19</td><td>44</td><td>28</td><td>8</td><td class="tneg">-32 (-42.1%)</td><td class="tup">+8 / +3</td></tr>
-        <tr class="latest"><td>10/26 — latest</td><td>46</td><td>30</td><td>10</td><td class="tneg">-30 (-39.5%)</td><td class="tup">+2 / +2</td></tr>
+        <tr><td>10/5</td><td>27</td><td>47</td><td class="tneg">-20 (-42.6%)</td><td>18</td><td>34</td><td>&mdash;</td><td class="tflat">baseline</td></tr>
+        <tr><td>10/12</td><td>36</td><td>54</td><td class="tneg">-18 (-33.3%)</td><td>25</td><td>39</td><td>8</td><td class="tup">+9 / +7</td></tr>
+        <tr><td>10/19</td><td>44</td><td>69</td><td class="tneg">-25 (-36.2%)</td><td>28</td><td>49</td><td>8</td><td class="tup">+8 / +3</td></tr>
+        <tr><td>10/26</td><td>46</td><td>76</td><td class="tneg">-30 (-39.5%)</td><td>30</td><td>56</td><td>10</td><td class="tup">+2 / +2</td></tr>
+        <tr class="latest"><td>11/02 — latest</td><td>51</td><td>84</td><td>-33 (-39.3%)</td><td>32</td><td>63</td><td>10</td><td>+5 / +2</td></tr>
       </tbody>
     </table>
+    </div>
+    <div class="table-foot">"LY" is last year's YTD on the same date, so the gap reflects pace, not last year's final. Last year's EP3 finals: 178 started, 130 submitted, 39 current deposits. Change column is started / submitted.</div>
   </div>
 
 </main>
@@ -230,24 +243,23 @@ footer { text-align: center; font-size: 11px; color: #888780; padding: 2rem 1rem
 <footer>SMC Digital Marketing &middot; Domestic Online Enrollment 26-27 &middot; Source: Slate CRM &middot; smc-marketing.github.io/smc-enrollment-tracker</footer>
 
 <script>
+const tick = { color: '#888780', font: { size: 11 } };
 new Chart(document.getElementById('ep3Chart'), {
   type: 'line',
   data: {
-    labels: ['10/5', '10/12', '10/19', '10/26'],
+    labels: ['10/5', '10/12', '10/19', '10/26', '11/02'],
     datasets: [
-      { label: 'EP3 started', data: [27, 36, 44, 46], borderColor: '#4A2D8F', backgroundColor: 'rgba(74,45,143,0.1)', pointRadius: 6, tension: 0.3, borderWidth: 2, fill: true },
-      { label: 'EP3 submitted', data: [18, 25, 28, 30], borderColor: '#9F7AEA', backgroundColor: 'rgba(159,122,234,0.1)', pointRadius: 6, tension: 0.3, borderWidth: 2, fill: true },
-      { label: 'LY started (76)', data: [76, 76, 76, 76], borderColor: '#D3D1C7', backgroundColor: 'transparent', pointRadius: 0, borderDash: [4,4], borderWidth: 1.5 },
-      { label: 'LY submitted (56)', data: [56, 56, 56, 56], borderColor: '#D3D1C7', backgroundColor: 'transparent', pointRadius: 0, borderDash: [4,4], borderWidth: 1.5 }
+      { label: 'Started 26-27', data: [27, 36, 44, 46, 51], borderColor: '#4A2D8F', backgroundColor: 'rgba(74,45,143,0.08)', pointRadius: 5, tension: 0.3, borderWidth: 2, fill: true },
+      { label: 'Submitted 26-27', data: [18, 25, 28, 30, 32], borderColor: '#9F7AEA', backgroundColor: 'rgba(159,122,234,0.08)', pointRadius: 5, tension: 0.3, borderWidth: 2, fill: true },
+      { label: 'Started LY', data: [47, 54, 69, 76, 84], borderColor: '#4A2D8F', pointRadius: 3, tension: 0.3, borderDash: [5,4], borderWidth: 1.5 },
+      { label: 'Submitted LY', data: [34, 39, 49, 56, 63], borderColor: '#9F7AEA', pointRadius: 3, tension: 0.3, borderDash: [5,4], borderWidth: 1.5 }
     ]
   },
   options: {
     responsive: true, maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
     plugins: { legend: { display: false } },
-    scales: {
-      y: { min: 0, max: 90, ticks: { color: '#888780', font: { size: 11 } }, grid: { color: 'rgba(136,135,128,0.15)' } },
-      x: { ticks: { color: '#888780', font: { size: 11 } }, grid: { display: false } }
-    }
+    scales: { y: { min: 0, max: 100, ticks: tick, grid: { color: 'rgba(136,135,128,0.15)' } }, x: { ticks: tick, grid: { display: false } } }
   }
 });
 
@@ -256,19 +268,16 @@ new Chart(document.getElementById('ytdChart'), {
   data: {
     labels: ['EP1 Aug', 'EP2 Oct', 'EP3 Jan', 'EP4 March', 'EP5 May'],
     datasets: [
-      { label: "'23-24", data: [188, 70, 70, 7, 4], backgroundColor: '#888780', borderRadius: 3 },
-      { label: "'24-25", data: [301, 124, 96, 9, 4], backgroundColor: '#2a78d6', borderRadius: 3 },
-      { label: "'25-26", data: [346, 135, 69, 10, 2], backgroundColor: '#1baf7a', borderRadius: 3 },
-      { label: "'26-27", data: [316, 132, 44, 4, 5], backgroundColor: '#4A2D8F', borderRadius: 3 }
+      { label: "'23-24", data: [188, 70, 84, 9, 4], backgroundColor: '#888780', borderRadius: 3 },
+      { label: "'24-25", data: [301, 124, 121, 12, 5], backgroundColor: '#2a78d6', borderRadius: 3 },
+      { label: "'25-26", data: [346, 135, 84, 12, 3], backgroundColor: '#1baf7a', borderRadius: 3 },
+      { label: "'26-27", data: [316, 132, 51, 4, 5], backgroundColor: '#4A2D8F', borderRadius: 3 }
     ]
   },
   options: {
     responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { display: true, labels: { font: { size: 11 }, color: '#5F5E5A', boxWidth: 12, boxHeight: 12 } } },
-    scales: {
-      y: { min: 0, max: 400, ticks: { color: '#888780', font: { size: 11 } }, grid: { color: 'rgba(136,135,128,0.15)' } },
-      x: { ticks: { color: '#888780', font: { size: 11 } }, grid: { display: false } }
-    }
+    plugins: { legend: { display: false } },
+    scales: { y: { min: 0, max: 400, ticks: tick, grid: { color: 'rgba(136,135,128,0.15)' } }, x: { ticks: tick, grid: { display: false } } }
   }
 });
 </script>
